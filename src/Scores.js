@@ -65,25 +65,26 @@ let allCountryScores = [
 const Scores = () => {
   return (
     <table className="table">
-        {allCountryScores.map((country, index) => {
-          return (
-            <tr key={index}>
-              <thead>
-                <th scope="col">HIGH SCORES: {country.name}</th>
-              </thead>
-                {country.scores.map((player) => {
-                  return (
-                    <tbody>
-                      <tr>
-                        <td>{player.n}</td>
-                        <td>{player.s}</td>
-                      </tr>
-                    </tbody>
-                  );
-                })}
-            </tr>
-          );
-        })}
+      {allCountryScores.map((country, index) => {
+        return (
+          <tr key={index} className="table-country">
+            <thead>
+              <th scope="col">HIGH SCORES: {country.name}</th>
+            </thead>
+            {country.scores.map((player) => {
+              return (
+                <tbody>
+                  <hr></hr>
+                  <tr>
+                    <td class="player-name">{player.n}:</td>
+                    <td class="player-score">{player.s}</td>
+                  </tr>
+                </tbody>
+              );
+            })}
+          </tr>
+        );
+      })}
     </table>
   );
 };
